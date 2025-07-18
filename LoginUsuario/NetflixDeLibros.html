@@ -1,35 +1,58 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-    <title>NetflixDeLibros</title>
-    <link rel="stylesheet" href="NetflixLibro.css" />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Explora tu catálogo digital de libros favoritos en Netflix de Libros.">
+    <title>Catálogo de Libros - Netflix de Libros</title>
+    <link rel="stylesheet" href="NetflixLibro.css">
 </head>
+
 <body>
     <header>
-        <h1>NetflixDeLibros</h1>
+        <h1>Netflix de Libros</h1>
         <p>Tu catálogo digital de libros favoritos</p>
     </header>
     <main>
-        <div class="catalogo">
-            <div class="libro">
-                <img src="https://images.unsplash.com/photo-1512820790803-83ca734da794?auto=format&fit=crop&w=200&q=80" alt="Libro 1">
-                <h3>El Principito</h3>
-                <p>Antoine de Saint-Exupéry</p>
-            </div>
-            <div class="libro">
-                <img src="https://images.unsplash.com/photo-1524985069026-dd778a71c7b4?auto=format&fit=crop&w=200&q=80" alt="Libro 2">
-                <h3>Cien años de soledad</h3>
-                <p>Gabriel García Márquez</p>
-            </div>
-            <div class="libro">
-                <img src="https://images.unsplash.com/photo-1465101046530-73398c7f28ca?auto=format&fit=crop&w=200&q=80" alt="Libro 3">
-                <h3>Rayuela</h3>
-                <p>Julio Cortázar</p>
-            </div>
-        </div>
-        <a class="volver" href="Index.html">Volver al inicio</a>
+        <input type="text" id="search" placeholder="Buscar libros por título o autor" class="search-bar">
+        <section class="catalogo" id="catalogo">
+            <!-- Los libros se cargarán dinámicamente con JavaScript -->
+        </section>
+        <a href="Index.html" class="volver" aria-label="Volver a la página de inicio de sesión">Volver al inicio</a>
     </main>
+    <script>
+        const libros = [
+            { titulo: "El Principito", autor: "Antoine de Saint-Exupéry", imagen: "https://via.placeholder.com/100x140?text=El+Principito" },
+            { titulo: "Cien años de soledad", autor: "Gabriel García Márquez", imagen: "https://via.placeholder.com/100x140?text=Cien+Años" },
+            { titulo: "Rayuela", autor: "Julio Cortázar", imagen: "https://via.placeholder.com/100x140?text=Rayuela" }
+        ];
+
+        function renderLibros(filtro = '') {
+            const catalogo = document.getElementById('catalogo');
+            catalogo.innerHTML = '';
+            const librosFiltrados = libros.filter(libro =>
+                libro.titulo.toLowerCase().includes(filtro.toLowerCase()) ||
+                libro.autor.toLowerCase().includes(filtro.toLowerCase())
+            );
+            librosFiltrados.forEach(libro => {
+                const div = document.createElement('div');
+                div.className = 'libro';
+                div.innerHTML = `
+                    <img src="${libro.imagen}" alt="Portada del libro ${libro.titulo} de ${libro.autor}">
+                    <h3>${libro.titulo}</h3>
+                    <p>${libro.autor}</p>
+                `;
+                catalogo.appendChild(div);
+            });
+        }
+
+        document.getElementById('search').addEventListener('input', (e) => {
+            renderLibros(e.target.value);
+        });
+
+        renderLibros();
+    </script>
 </body>
+
 </html>

@@ -6,6 +6,7 @@ body {
     padding: 0;
 }
 
+
 header {
     background: #1a1a1a;
     padding: 1rem;
@@ -135,6 +136,7 @@ main {
         width: 95%;
     }
 }
+
 .volver:hover {
     background: #e50914;
     color: #fff;

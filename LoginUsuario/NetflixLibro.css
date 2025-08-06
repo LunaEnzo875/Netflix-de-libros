@@ -56,7 +56,9 @@ main {
     justify-content: center;
 }
 
-.libro {
+.Libro {
+    display: flex;
+    flex-direction: column;
     background: #222;
     border-radius: 8px;
     padding: 1rem;
@@ -74,14 +76,6 @@ main {
     box-shadow: 0 4px 16px rgba(9, 229, 38, 0.5);
 }
 
-.libro img {
-    width: 100px;
-    height: 140px;
-    object-fit: cover;
-    border-radius: 4px;
-    margin-bottom: 0.5rem;
-    border: 2px solid #aae509;
-}
 
 .libro h3 {
     color: #e5e509;

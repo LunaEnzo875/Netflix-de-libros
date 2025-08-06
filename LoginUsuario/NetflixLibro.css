@@ -71,10 +71,6 @@ main {
     transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
 }
 
-.libro:hover {
-    transform: scale(1.05);
-    box-shadow: 0 4px 16px rgba(9, 229, 38, 0.5);
-}
 
 
 .libro h3 {
@@ -84,11 +80,6 @@ main {
     font-size: 1.1rem;
 }
 
-.libro p {
-    color: #ccc;
-    margin: 0;
-    font-size: 0.9rem;
-}
 
 .volver {
     display: block;

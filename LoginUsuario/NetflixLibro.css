@@ -62,8 +62,6 @@ main {
     background: #070707;
     border-radius: 8px;
     padding: 1rem;
-    min-width: 160px;
-    flex: 1 1 160px;
     max-width: 200px;
     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.5);
     text-align: center;

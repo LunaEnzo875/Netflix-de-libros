@@ -59,7 +59,7 @@ main {
 .Libro {
     display: flex;
     flex-direction: column;
-    background: #222;
+    background: #070707;
     border-radius: 8px;
     padding: 1rem;
     min-width: 160px;

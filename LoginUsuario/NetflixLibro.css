@@ -1,6 +1,6 @@
 body {
     background: #141414;
-    color: #fff;
+    color: #000000;
     font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
@@ -104,21 +104,7 @@ main {
     outline-offset: 2px;
 }
 
-@media (max-width: 600px) {
-    .libro {
-        flex: 1 1 140px;
-        max-width: 160px;
-    }
 
-    .libro img {
-        width: 80px;
-        height: 120px;
-    }
-
-    .search-bar {
-        width: 95%;
-    }
-}
 
 .volver:hover {
     background: #e50914;
